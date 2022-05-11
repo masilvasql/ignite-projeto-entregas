@@ -12,3 +12,15 @@
     https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres#create-project-setup
 ````
 
+## Scripts
+
+````
+    "scripts": {
+        "dev": "ts-node-dev --exit-child --transpile-only   --ignore-watch node_modules src/server.ts"
+  },
+````
+
+*   <b>ts-node-dev</b>  - Roda a aplicação com typeScript;
+*   <b>--exit-child</b> - Com o prisma, é necessário para dar reload automático ao salvar um arquivo;
+*   <b>--transpile-only</b> - deixa mais rápida a aplicação pois não efetua validações;
+*   <b>--ignore-watch node_modules</b> - Não irá monitorar alterações na pasta

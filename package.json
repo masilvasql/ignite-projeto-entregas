@@ -5,6 +5,9 @@
   "repository": "https://github.com/masilvasql/ignite-projeto-entregas.git",
   "author": "<masilvasql@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "dependencies": {
     "@prisma/client": "^3.14.0",
     "bcrypt": "^5.0.1",
