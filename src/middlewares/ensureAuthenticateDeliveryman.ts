@@ -19,7 +19,7 @@ export async function ensureAuthenticateDeliveryman(request:Request, response:Re
     try{
         const{sub} = verify(token, "019acc25a4e242bb77ad489832ada12d") as IPayload;
 
-        request.id_client = sub;
+        request.id_deliveryman = sub;
     
         return next();
     }catch(err){
