@@ -4,6 +4,7 @@
 *   yarn prisma init - Inicializa o prisma
 *   yarn prisma migrate dev - Gera as entidades no banco
 *   yarn prisma format - Ajusta os relacionamentos entre tabelas automaticamente
+*   yarn prisma generate - caso a tabela já esteja criada e exista uma atualização, ela atualiza sem afetar a estrutura já criada
 
 
 ```` 

@@ -4,6 +4,7 @@ import { ensureAuthenticateDeliveryman } from "./middlewares/ensureAuthenticateD
 import { AuthenticateClientController } from "./modules/account/authenticateClient/AuthenticateClientController";
 import {AuthenticateDeliveryManController} from './modules/account/authenticateDelivertMan/AuthenticateDeliveryManController'
 import { CreateClientController } from "./modules/clients/useCases/createClient/createClientController";
+import { FindAllDeliveriesController } from "./modules/clients/useCases/deliveries/findAllDeliveriesController";
 import { CreateDeliveryController } from "./modules/deliveries/usescases/createDelivery/CreateDeliveryController";
 import {FindAllAvailableController} from "./modules/deliveries/usescases/findAllAvailable/FindAllAvailableController";
 import { UpdateDeliveryManController } from "./modules/deliveries/usescases/updateDeliveryman/updateDeliveryManController";
@@ -18,6 +19,7 @@ const authenticateDeliveryManController = new AuthenticateDeliveryManController(
 const deliveryController = new CreateDeliveryController();
 const findAllAvailableController = new FindAllAvailableController();
 const updateDeliveryController = new UpdateDeliveryManController();
+const findAllVeliveriesController = new FindAllDeliveriesController();
 
 routes.post("/client/", createClientController.handle);
 routes.post("/deliveryman/", createDeliveryManController.handle);
@@ -25,6 +27,7 @@ routes.post("/client/authenticate/", authenticateClientController.handle);
 routes.post("/deliveryman/authenticate/", authenticateDeliveryManController.handle);
 routes.post("/delivery/", ensureAuthenticateClient ,deliveryController.handle);
 routes.get("/delivery/available", ensureAuthenticateDeliveryman ,findAllAvailableController.handle);
-routes.put("/delivery/updateDeliveryman/:id", ensureAuthenticateDeliveryman ,updateDeliveryController.handle)
+routes.put("/delivery/updateDeliveryman/:id", ensureAuthenticateDeliveryman ,updateDeliveryController.handle);
+routes.get("/client/deliveries", ensureAuthenticateClient ,findAllVeliveriesController.handle)
 
 export{routes};
